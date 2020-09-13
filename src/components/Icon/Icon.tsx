@@ -6,11 +6,7 @@ type PropsType = {
 
 const Icon = ({ code }: PropsType): ReactElement => {
   const url = `http://openweathermap.org/img/wn/${code}@4x.png`;
-  return (
-    <div>
-      <img src={url} alt="icon" />
-    </div>
-  );
+  return <img src={url} alt="icon" />;
 };
 
 export default Icon;

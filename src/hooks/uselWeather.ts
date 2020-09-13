@@ -14,7 +14,7 @@ type LocalWeatherResult = {
 
 const useLocalWeather = (
   location: CoordType,
-): QueryResult<LocalWeatherResult> => {
+): QueryResult<LocalWeatherResult | undefined> => {
   return useQuery(['local-weather', location], getweatherService);
 };
 

@@ -10,11 +10,11 @@ import citiesList from 'mockData/citiesList';
 import styles from './App.module.scss';
 
 const App = (): ReactElement => {
-  const { location = { latitude: 0, longitude: 0 } } = useGeoLocation();
+  const { location } = useGeoLocation();
   const [selectedCoord, setSelectedCoord] = useState<CoordType | undefined>(
     undefined,
   );
-  const { data, status } = useWeather(selectedCoord || location);
+  const { data } = useWeather(selectedCoord || location);
   const dailyData = data?.daily.slice(1, -2);
 
   const title = data?.timezone.split('/').join(' ');
@@ -34,7 +34,7 @@ const App = (): ReactElement => {
         title="Select a city"
         onChange={handleSelect}
       />
-      <Container isLoading={status === ('loading' || 'error')}>
+      <Container isLoading={data === undefined}>
         <h1 className={styles.titleLocation}>{title}</h1>
         <CurrentWeather currentWeather={data?.current} />
         <div className={styles.dailyContainer}>

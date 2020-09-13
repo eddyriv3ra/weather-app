@@ -6,7 +6,10 @@ type CoordsType = {
 };
 
 const useCurrentLocation = () => {
-  const [location, setLocation] = useState<CoordType>();
+  const [location, setLocation] = useState<CoordType>({
+    latitude: 0,
+    longitude: 0,
+  });
 
   const handleSuccess = (pos: CoordsType) => {
     const { latitude, longitude } = pos.coords;
@@ -18,8 +21,12 @@ const useCurrentLocation = () => {
   };
 
   useEffect(() => {
-    const { geolocation } = navigator;
-    geolocation.getCurrentPosition(handleSuccess);
+    const getPosition = async () => {
+      const { geolocation } = navigator;
+      const position = await geolocation.getCurrentPosition(handleSuccess);
+      return position;
+    };
+    getPosition();
   }, []);
 
   return { location };

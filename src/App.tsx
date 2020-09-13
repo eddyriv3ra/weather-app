@@ -17,7 +17,7 @@ const App = (): ReactElement => {
   const { data } = useWeather(selectedCoord || location);
   const dailyData = data?.daily.slice(1, -2);
 
-  const title = data?.timezone.split('/').join(' ');
+  const title = data?.timezone.split('/').join(' - ');
 
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     const selectedCityId = parseInt(e.target.value, 10);

@@ -15,12 +15,12 @@ const Card = ({ data }: DataType): ReactElement => {
       <Icon code={data.weather[0].icon} />
       <div className={styles.temps}>
         <div>
-          <h3>Max</h3>
-          <p>{`${data.temp.min}º`}</p>
+          <h3>Min</h3>
+          <p>{`${data.temp.min.toFixed(1)}º`}</p>
         </div>
         <div>
-          <h3>Min</h3>
-          <p>{`${data.temp.max}º`}</p>
+          <h3>Max</h3>
+          <p>{`${data.temp.max.toFixed(1)}º`}</p>
         </div>
       </div>
     </div>

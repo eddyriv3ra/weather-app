@@ -1,0 +1,41 @@
+@import 'styles/abstracts/_variables';
+
+.title {
+  text-align: center;
+}
+
+.itemsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-grow: 2;
+}
+
+.items {
+  width: 33%;
+}
+
+.description {
+  font-size: $font-large;
+}
+
+.temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-eztra-large;
+}
+
+.additionalInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: $font-large;
+  justify-content: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

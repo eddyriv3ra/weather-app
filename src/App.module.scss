@@ -1,0 +1,16 @@
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dailyContainer {
+  display: flex;
+  flex-grow: 1;
+}
+
+.titleLocation {
+  text-align: center;
+}

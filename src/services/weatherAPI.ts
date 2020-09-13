@@ -1,6 +1,6 @@
 const APIKEY = '87785fd894796a32a355c987c12eeb45';
 
-const url = 'http://api.openweathermap.org/data/2.5';
+const url = 'https://api.openweathermap.org/data/2.5';
 
 type WeatherRequestType = {
   latitude: number;
